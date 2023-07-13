@@ -28,6 +28,12 @@ public class MainActivity extends AppCompatActivity {
         tv.setText(stringFromJNI());
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        MyApplication.getInstance().getAssignmentManager().post(TaskThread4.class, () -> binding.sampleText.setText("張三李四王五"));
+    }
+
     /**
      * A native method that is implemented by the 'assignment' native library,
      * which is packaged with this application.
