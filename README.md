@@ -1,5 +1,22 @@
 # Assignment
 
+##依赖步骤
+Step 1. Add the JitPack repository to your build file
+```agsl
+	allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+```
+Step 2. Add the dependency
+```agsl
+	dependencies {
+	        implementation 'com.github.Liera-tech:Assignment:-SNAPSHOT'
+	}
+```
+
 ## 实现原理
 ```
 
