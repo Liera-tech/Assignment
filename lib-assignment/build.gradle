@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.library'
 }
+apply plugin: 'maven-publish'
 
 android {
     namespace 'liera.tech.lib_assignment'
@@ -23,6 +24,34 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+
+afterEvaluate {
+    publishing {
+        def versionName = "1.0.0" // 当前版本依赖库版本号，这个jitpack不会使用到，只是我们开发者自己查看
+        publications {
+            // Creates a Maven publication called "release".
+            release(MavenPublication) {
+                // Applies the component for the release build variant.
+//                from components.release // 表示发布 release（jitpack 都不会使用到）
+
+                // You can then customize attributes of the publication as shown below.
+                groupId = 'liera.tech.assignment' // 这个是依赖库的组 id
+                artifactId = 'assignment' // 依赖库的名称（jitpack 都不会使用到）
+                version = versionName
+            }
+        }
+        repositories {
+            maven {
+                // change URLs to point to your repos, e.g. http://my.org/repo
+                def baseUrl = buildDir.getParent()
+                def releasesRepoUrl = "$baseUrl/repos/releases"
+                def snapshotsRepoUrl = "$baseUrl/repos/snapshots"
+                url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
+            }
+        }
     }
 }
 
