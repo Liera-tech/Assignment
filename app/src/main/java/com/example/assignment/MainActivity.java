@@ -3,10 +3,7 @@ package com.example.assignment;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.view.View;
 import android.widget.TextView;
-
-import com.example.assignment.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
     private TextView sampleText;
