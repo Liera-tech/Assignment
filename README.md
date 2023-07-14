@@ -14,7 +14,7 @@ allprojects {
 #### Step 2. Add the dependency
 ```agsl
 dependencies {
-        implementation 'com.github.Liera-tech:Assignment:-SNAPSHOT'
+    implementation 'com.github.Liera-tech:Assignment:1.0.0'
 }
 ```
 
