@@ -1,33 +1,15 @@
 # Assignment
 
-## 依赖步骤
-
-#### Step 1. Add the JitPack repository to your build file
-```agsl
-allprojects {
-    repositories {
-        ...
-        maven { url 'https://jitpack.io' }
-    }
-}
-```
-#### Step 2. Add the dependency
-```agsl
-dependencies {
-    implementation 'com.github.Liera-tech:Assignment:1.0.0'
-}
-```
-
 ## 实现原理
 ```
-                
-                        ②   →   ③
-                    ↗               ↘
-                ①                       ⑥   →
-                    ↘               ↗
-                            ⑤   
-                            
-                ④   →
+                        
+                                ②   →   ③
+                            ↗               ↘
+                        ①                       ⑥   →
+                            ↘               ↗
+                                    ⑤   
+                                    
+                        ④   →
 
 以上拓扑图谱图简单解释一下：
 1.任务1首先要执行，然后要么执行任务2，要么执行任务5，但要保证任务3在任务2执行完成后再执行，最终任务3和任务5执行完成后才能执行任务6
