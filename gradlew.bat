@@ -85,5 +85,6 @@ exit /b 1
 
 :mainEnd
 if "%OS%"=="Windows_NT" endlocal
+#你好，时间
 
 :omega
